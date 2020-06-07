@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
+import Chart from './Charts.js';
 import TabsDisplay from './TabsDisplay.js'
 import HomePage from './HomePage.js'
 
@@ -95,7 +95,7 @@ export default function MainComponent() {
                             <TVShows />
                         </Route>
                         <Route path="/dataCharts">
-                            <DataChartPage />
+                            <Chart />
                         </Route>
                         <Route exact path="/">
                             <HomePage />
@@ -114,7 +114,7 @@ function NavigationHost(props) {
         return <HomePage />
     }
     else if (props.pageName === "dataCharts") {
-        return <DataChartPage />
+        return <Chart/>
     }
     else if (props.pageName === "Movies") {
         return <MoviePage />
@@ -139,12 +139,12 @@ function TVShows() {
 }
 
 
-function DataChartPage() {
-    return (
-        <div>Welcome! Here is where the data visualizations will be!</div>
-    );
+// function DataChartPage() {
+//     return (
+//         <div>Welcome! Here is where the data visualizations will be!</div>
+//     );
 
-}
+// }
 
 
 

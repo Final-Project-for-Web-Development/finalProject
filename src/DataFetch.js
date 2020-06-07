@@ -5,9 +5,11 @@ async function getMovieWithID(id) {
 }
 
 // Call that retrieves the movies that are now playing, maybe as the default screen before search
-async function getNowPlayingMovies() {
-    await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d')
-        .then((response) => response.json)
+export async function getNowPlayingMovies() {
+    return fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d')
+        .then((response) => {
+            return response.json();
+        })
 }
 
 // Call that retrieves movies based on search for title (query parsing in api call or in front end passing to api?)
