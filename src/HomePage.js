@@ -28,7 +28,6 @@ class HomePage extends React.Component {
                     movieResults: data.results,
                     loading: false
                 })
-                console.log(this.state);
                 return data;
             })
             .catch(err => {
@@ -42,6 +41,7 @@ class HomePage extends React.Component {
         return (
             <>
                 <div><SearchIconAnimation /></div>
+               
                 <br />
             </>
         );

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import { getNowPlayingMovies } from './DataFetch.js';
+import { getMovieWithID, getPopularTVShows, getPopularMovies } from './DataFetch.js';
 
-class Chart extends React.Component {
+
+class TvChart extends React.Component {
     constructor(props) {
         super(props)
         this.names=[]
@@ -12,7 +13,7 @@ class Chart extends React.Component {
             datasets: [
               {
                 label: 'Average Rating',
-                backgroundColor: 'rgb(241, 79, 79)',
+                backgroundColor: 'rgba(66, 66, 250, 0.7)',
                 borderColor: 'rgba(0,0,0,1)',
                 borderWidth: 2,
                 data: []
@@ -21,12 +22,84 @@ class Chart extends React.Component {
           }
     }
     componentDidMount() {
-        this.fetchingNowPlaying();
-        let movies = this.fetchingNowPlaying();
+        this.fetchingPopTvShows();
+        let shows = this.fetchingPopTvShows();
+    }
+    fetchingPopTvShows = () => {
+        getPopularTVShows()
+            .then((data) => {
+              var  name = []
+              var  vote = []
+                for(var i=0; i<data.results.length; i++){
+                    name.push(data.results[i].name);
+                    vote.push(data.results[i].vote_average)
+                }
+                this.setState({
+                    labels: name,
+                    datasets: [{
+                    label: 'Average Rating',
+                backgroundColor: 'rgba(66, 66, 250, 0.7)',
+                borderColor: 'rgba(0,0,0,1)',
+                borderWidth: 2,
+                data: vote
+                    }]
+                })
+                return data;
+            })
+            .catch(err => {
+
+                return err;
+            });
+    }
+    render(){
+
+        return(
+         <div>
+            
+            <Bar 
+            data={this.state}
+            options={{
+                title:{
+                    display: true,
+                    text: 'Popular TV Shows',
+                    fontSize:20
+                },
+                legend:{
+                    display: true,
+                    position: "right"
+                }
+            }}
+            />
+            </div>
+    
+        );
+    }
+}
+class MovieChart extends React.Component {
+    constructor(props) {
+        super(props)
+        this.names=[]
+        this.votes =[]
+        this.state = {
+            labels: [],
+            datasets: [
+              {
+                label: 'Average Rating',
+                backgroundColor: 'rgb(66, 66, 250)',
+                borderColor: 'rgba(0,0,0,1)',
+                borderWidth: 2,
+                data: []
+              }
+            ]
+          }
+    }
+    componentDidMount() {
+        this.fetchingPopularMovies();
+        let movies = this.fetchingPopularMovies();
     }
    
-    fetchingNowPlaying = () => {
-        getNowPlayingMovies()
+    fetchingPopularMovies = () => {
+        getPopularMovies()
             .then((data) => {
               var  name = []
               var  vote = []
@@ -38,7 +111,7 @@ class Chart extends React.Component {
                     labels: name,
                     datasets: [{
                     label: 'Average Rating',
-                backgroundColor: 'rgb(241, 79, 79)',
+                backgroundColor: 'rgb(66, 66, 250)',
                 borderColor: 'rgba(0,0,0,1)',
                 borderWidth: 2,
                 data: vote
@@ -62,13 +135,12 @@ class Chart extends React.Component {
             options={{
                 title:{
                     display: true,
-                    text: 'Movies Now Playing in Theaters',
+                    text: 'Popular Movies',
                     fontSize:20
                 },
                 legend:{
                     display: true,
-                    position: "right"
-                }
+                    position: "right"                }
             }}
             />
             </div>
@@ -76,4 +148,66 @@ class Chart extends React.Component {
         );
     }
 }
-export default Chart;
+// class CompareTwoRatings{
+//     constructor(props) {
+//         super(props)
+//         this.movieOne = {
+//             label: 'Movie One Rating',
+//             backgroundColor: 'rgba(66, 66, 250, 0.7)',
+//             borderColor: 'rgba(0,0,0,1)',
+//             borderWidth: 2,
+//             data: []
+//           }
+//         this.movieTwo = {
+//             label: 'Movie Two Rating',
+//             backgroundColor: 'rgb(66, 66, 250)',
+//             borderColor: 'rgba(0,0,0,1)',
+//             borderWidth: 2,
+//             data: []
+//           }
+//         this.state = {
+//             labels: [],
+//             datasets: [
+//               {
+//                 label: 'Movie One Rating',
+//                 backgroundColor: 'rgba(66, 66, 250, 0.7)',
+//                 borderColor: 'rgba(0,0,0,1)',
+//                 borderWidth: 2,
+//                 data: []
+//               },
+//               {
+//                 label: 'Movie Two Rating',
+//                 backgroundColor: 'rgb(66, 66, 250)',
+//                 borderColor: 'rgba(0,0,0,1)',
+//                 borderWidth: 2,
+//                 data: []
+//               }
+//             ]
+//           }
+//     }
+//     componentDidMount() {
+//         this.fetchingMovie();
+//         let searchOne = this.fetchingMovie();
+//     }
+//     fetchingMovie = () => {
+//         getMovieWithID()
+//             .then((data) => {
+//                 this.setState({
+//                     labels: data.results.title,
+//                     datasets: [{
+//                     label: 'Average Rating',
+//                 backgroundColor: 'rgba(66, 66, 250, 0.7)',
+//                 borderColor: 'rgba(0,0,0,1)',
+//                 borderWidth: 2,
+//                 data: data.result.vote_average
+//                     }]
+//                 })
+//                 return data;
+//             })
+//             .catch(err => {
+
+//                 return err;
+//             });
+//     }
+// }
+export { MovieChart, TvChart};

@@ -1,7 +1,9 @@
 // Call to retrieve a specific movie based on id (used to get more info once id is gotten from search)
-async function getMovieWithID(id) {
-    await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d`)
-        .then((response) => response.json)
+export async function getMovieWithID(id) {
+    return fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d`)
+        .then((response) => {
+            return response.json();
+        });
 }
 
 // Call that retrieves the movies that are now playing, maybe as the default screen before search
@@ -46,7 +48,9 @@ async function getTVShowsBySearch(title) {
 }
 
 // Call to pull the first page of popular TV shows (should return 20 entries)
-async function getPopularTVShows() {
-    await fetch('https://api.themoviedb.org/3/tv/popular?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&language=en-US&page=1')
-        .then((response) => response.json)
+export async function getPopularTVShows() {
+    return fetch('https://api.themoviedb.org/3/tv/popular?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&language=en-US&page=1')
+        .then((response) => {
+         return response.json();
+    })
 }
