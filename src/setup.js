@@ -11,6 +11,7 @@ import { TvChart, MovieChart } from './popularCharts.js';
 
 
 
+
 import {
     Switch,
     Route,
@@ -94,7 +95,8 @@ export default function MainComponent() {
                         <Route path='/TVShows'>
                             <TVShows />
                         </Route>
-                        <Route path="/dataCharts">
+
+                        <Route path="/DataCharts">
                             <MovieChart />
                             <TvChart />
                         </Route>
@@ -119,8 +121,7 @@ function NavigationHost(props) {
         )
 
     }
-
-    else if (props.pageName === "dataCharts") {
+    else if (props.pageName === "DataCharts") {
         return (
             <div>
                 <MovieChart />

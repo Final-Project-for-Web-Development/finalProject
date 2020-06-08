@@ -132,7 +132,7 @@ class HomePage extends React.Component {
 
         return (
             <div class="container">
-                <Typography variant="h2" color="textSecondary">
+                <Typography variant="h2" style={{ color: "black" }}>
                     Popular Movies
                 </Typography>
                 <Grid container wrap="wrap">
@@ -143,7 +143,7 @@ class HomePage extends React.Component {
                                     <Box key={index} width={250} marginRight={0.5} my={5}>
 
                                         {item ? (
-                                            <img style={{ width: 250, height: 300 }} alt={item.title} src={this.state.movieImages[index]} />
+                                            <img style={{ width: 250, height: 300 }} alt={item.title + "movie's poster goes here"} src={this.state.movieImages[index]} />
                                         ) : (
                                                 <Skeleton variant="rect" width={250} height={300} />
                                             )}
@@ -151,17 +151,17 @@ class HomePage extends React.Component {
                                         {item ? (
                                             <>
                                                 <Box pr={2}>
-                                                    <Typography gutterBottom variant="body2">
+                                                    <Typography gutterBottom variant="body2" style={{ color: "black" }}>
                                                         {item.title}
                                                     </Typography>
 
-                                                    <Typography variant="caption" color="textSecondary">
+                                                    <Typography variant="caption" style={{ color: "black" }}>
                                                         {`${item.popularity} • ${item.release_date}`}
                                                     </Typography>
 
                                                 </Box>
                                                 <>
-                                                    <Typography variant="caption" color="textSecondary">
+                                                    <Typography variant="caption" style={{ color: "black" }}>
                                                         {` ${item.overview}`}
                                                     </Typography>
                                                 </>
@@ -177,7 +177,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </Grid>
-                <Typography variant="h2" color="textSecondary">
+                <Typography variant="h2" style={{ color: "black" }}>
                     Popular TV Shows
                 </Typography>
                 <Grid container wrap="wrap">
@@ -186,7 +186,7 @@ class HomePage extends React.Component {
                             {(this.state.loading ? Array.from(new Array(40)) : (this.state.TVShowsResults).map((item, index) => (
                                 <Box key={index} width={250} marginRight={0.5} my={5}>
                                     {item ? (
-                                        <img style={{ width: 250, height: 300 }} alt={item.title} src={this.state.TVShowsImages[index]} />
+                                        <img style={{ width: 250, height: 300 }} alt={item.name + "TV show's poster goes here"} src={this.state.TVShowsImages[index]} />
                                     ) : (
                                             <Skeleton variant="rect" width={250} height={300} />
                                         )}
@@ -194,17 +194,18 @@ class HomePage extends React.Component {
                                     {item ? (
                                         <>
                                             <Box pr={2}>
-                                                <Typography gutterBottom variant="body2">
+
+                                                <Typography gutterBottom variant="body2" style={{ color: "black" }}>
                                                     {item.name}
                                                 </Typography>
 
-                                                <Typography variant="caption" color="textSecondary">
+                                                <Typography variant="caption" color="textSecondary" style={{ color: "black" }}>
                                                     {`${item.popularity} • ${item.first_air_date}`}
                                                 </Typography>
 
                                             </Box>
                                             <>
-                                                <Typography variant="caption" color="textSecondary">
+                                                <Typography variant="caption" style={{ color: "black" }}>
                                                     {` ${item.overview}`}
                                                 </Typography>
                                             </>
@@ -221,6 +222,7 @@ class HomePage extends React.Component {
                     </div>
                 </Grid>
             </div>
+
         );
     }
 }
