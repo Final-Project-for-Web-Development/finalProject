@@ -1,0 +1,52 @@
+/* ::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+.container {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+
+
+*/
+
+
+  .side{
+    flex: 1;
+    color: white;
+    overflow-x: scroll;
+  }
+  
+  .content{
+    flex: 1;
+    height: 100vh;
+    overflow-x: scroll;
+  }
+  
+div.scrollmenu {
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    width: 98vw;
+  }
+  
+  div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+
+
+
+
+
+
