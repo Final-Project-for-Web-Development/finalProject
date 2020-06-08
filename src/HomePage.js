@@ -68,28 +68,6 @@ class HomePage extends React.Component {
         });
     }
 
-    // trying to merge both movies and TV Shows search but not working right now
-    /* fetchingMoviesORTVShows(func, movieBool) {
-        console.log(func)
-        if (movieBool) {
-            func
-                .then((data) => {
-                    console.dir(data.results)
-                    this.setState({
-                        movieResults: data.results,
-                        movieImages: [],
-                        loading: true
-                    }, () => this.fetchingPosterImages());
-                    return data;
-                })
-                .catch(err => {
-
-                    return err;
-                });
-        } 
-
-
-    } */
 
 
     fetchingMovies = () => {
