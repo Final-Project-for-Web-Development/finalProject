@@ -8,10 +8,7 @@ import TabsDisplay from './TabsDisplay.js';
 import HomePage from './HomePage.js';
 import SearchIconAnimation from './searchAnimation.js';
 import {TvChart, MovieChart} from './popularCharts.js';
-import TabsDisplay from './TabsDisplay.js'
-import HomePage from './HomePage.js'
 
-import SearchIconAnimation from './searchAnimation.js'
 
 
 import {
@@ -98,8 +95,6 @@ export default function MainComponent() {
                             <TVShows />
                         </Route>
                         <Route path="/DataCharts">
-                            <DataChartPage />
-                        <Route path="/dataCharts">
                             <MovieChart />
                             <TvChart/>
                         </Route>
@@ -124,18 +119,13 @@ function NavigationHost(props) {
         )
 
     }
-<<<<<<< HEAD
     else if (props.pageName === "DataCharts") {
-        return <DataChartPage />
-=======
-    else if (props.pageName === "dataCharts") {
         return (
             <div>
         <MovieChart/>
         <TvChart/>
         </div>
         )
->>>>>>> 343ae8db035d1587d72f19912ee9f1b92a3fe838
     }
     else if (props.pageName === "Movies") {
         return <MoviePage />
