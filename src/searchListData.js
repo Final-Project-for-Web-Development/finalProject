@@ -1,6 +1,7 @@
 import React from 'react';
 import { getMovieBySearch, getTVShowsBySearch } from './DataFetch.js';
 import SearchIconAnimation from './searchAnimation.js'
+import { TvChart, MovieChart } from 'popularCharts.js'
 
 //to be combined with searchComparteTwo data in movie search section
 class MovieData extends React.Component {
