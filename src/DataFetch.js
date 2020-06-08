@@ -1,19 +1,25 @@
 // Call to retrieve a specific movie based on id (used to get more info once id is gotten from search)
-async function getMovieWithID(id) {
-    await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d`)
-        .then((response) => response.json)
+export async function getMovieWithID(id) {
+    return fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d`)
+        .then((response) => {
+            return response.json();
+        });
 }
 
 // Call that retrieves the movies that are now playing, maybe as the default screen before search
-async function getNowPlayingMovies() {
-    await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d')
-        .then((response) => response.json)
+export async function getNowPlayingMovies() {
+    return fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d')
+        .then((response) => {
+            return response.json();
+        })
 }
 
 // Call that retrieves movies based on search for title (query parsing in api call or in front end passing to api?)
-async function getMovieBySearch(title) {
-    await fetch(`https://api.themoviedb.org/3/search/movie?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&query=${title}`)
-        .then((response) => response.json)
+export function getMovieBySearch(title) {
+    return fetch(`https://api.themoviedb.org/3/search/movie?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&query=${title}`)
+        .then((response) => {
+            return response.json();
+        });
 }
 
 // Call that retrieves the poster for a movie or TV Show. Don't think it's necessary as you can do this directly
@@ -38,9 +44,11 @@ async function getTVShowWithID(id) {
 }
 
 // Call that retrieves TV Shows based on search for title (query parsing in api call or in front end passing to api?)
-async function getTVShowsBySearch(title) {
-    await fetch(`https://api.themoviedb.org/3/search/tv?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&query=${title}`)
-        .then((response) => response.json)
+export function getTVShowsBySearch(title) {
+    return fetch(`https://api.themoviedb.org/3/search/tv?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&query=${title}`)
+        .then((response) => {
+            response.json();
+        });
 }
 
 // Call to pull the first page of popular TV shows (should return 20 entries)
