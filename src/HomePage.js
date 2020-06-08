@@ -143,7 +143,7 @@ class HomePage extends React.Component {
                                     <Box key={index} width={250} marginRight={0.5} my={5}>
 
                                         {item ? (
-                                            <img style={{ width: 250, height: 300 }} alt={item.title + "movie's poster goes here"} src={this.state.movieImages[index]} />
+                                            <img style={{ width: 250, height: 300 }} alt={item.title + "'s poster goes here"} src={this.state.movieImages[index]} />
                                         ) : (
                                                 <Skeleton variant="rect" width={250} height={300} />
                                             )}
@@ -186,7 +186,7 @@ class HomePage extends React.Component {
                             {(this.state.loading ? Array.from(new Array(40)) : (this.state.TVShowsResults).map((item, index) => (
                                 <Box key={index} width={250} marginRight={0.5} my={5}>
                                     {item ? (
-                                        <img style={{ width: 250, height: 300 }} alt={item.name + "TV show's poster goes here"} src={this.state.TVShowsImages[index]} />
+                                        <img style={{ width: 250, height: 300 }} alt={item.name + "'s poster goes here"} src={this.state.TVShowsImages[index]} />
                                     ) : (
                                             <Skeleton variant="rect" width={250} height={300} />
                                         )}
@@ -224,7 +224,7 @@ class HomePage extends React.Component {
             </div>
 
 
-	 );
+        );
 
     }
 }
