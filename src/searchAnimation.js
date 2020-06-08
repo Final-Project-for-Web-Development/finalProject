@@ -20,9 +20,7 @@ class SearchIconAnimation extends React.Component {
     render() {
         return (
             <div>
-                <IconButton onClick={this.functionCall}>
-                    <SearchIcon style={{ color: 'white', width: '30px', height: '30px' }} />
-                </IconButton>
+                <IconButton children={<SearchIcon style={{ color: 'white', width: '30px', height: '30px' }} />} placeholder="Search" type="search" title="Search" label="search" aria-label="Search" aria="Search" alt="Search" value="search" onClick={this.functionCall} />
                 {this.state.openSearch ?
                     (
                         <input type="text" placeholder="Search" onChange={(e) => console.log("Hi")} />

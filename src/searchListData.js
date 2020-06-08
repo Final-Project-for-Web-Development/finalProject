@@ -1,5 +1,7 @@
 import React from 'react';
 import { getMovieBySearch, getTVShowsBySearch } from './DataFetch.js';
+
+    
 import SearchIconAnimation from './searchAnimation.js'
 import { TvChart, MovieChart } from 'popularCharts.js'
 
@@ -63,6 +65,7 @@ class MovieData extends React.Component {
 }
 //to be combined with searchCompareTwo entries in tv show search section
 class TVShowData extends React.Component {
+
     constructor(props){
         super(props);
         this.state={
