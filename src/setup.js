@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {TvChart, MovieChart} from './Charts.js';
+import {TvChart, MovieChart} from './popularCharts.js';
 import TabsDisplay from './TabsDisplay.js'
 import HomePage from './HomePage.js'
 
