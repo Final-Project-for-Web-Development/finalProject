@@ -18,9 +18,9 @@ async function getMovieBySearch(title) {
 
 // Call that retrieves the poster for a movie or TV Show. Don't think it's necessary as you can do this directly
 // from front-end and put the hyperlink in an image tag, but I figured I'd write the call to get the image
-async function getPoster(posterPath) {
-    await fetch(`https://image.tmdb.org/t/p/w500${posterPath}`)
-        .then((response) => response)
+export async function getPoster(posterPath) {
+    return fetch(`https://image.tmdb.org/t/p/w500${posterPath}`)
+        .then((response) => { return response })
 }
 
 // Call to pull the first page of popular movies (should return 20 entries)
@@ -44,7 +44,9 @@ async function getTVShowsBySearch(title) {
 }
 
 // Call to pull the first page of popular TV shows (should return 20 entries)
-async function getPopularTVShows() {
-    await fetch('https://api.themoviedb.org/3/tv/popular?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&language=en-US&page=1')
-        .then((response) => response.json)
+export async function getPopularTVShows() {
+    return fetch('https://api.themoviedb.org/3/tv/popular?api_key=0b0d2f38ed62a14bb5bd8993fbcbd35d&language=en-US&page=1')
+        .then((response) => {
+            return response.json();
+        })
 }

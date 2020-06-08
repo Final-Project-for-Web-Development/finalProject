@@ -4,16 +4,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
-import TabsDisplay from './TabsDisplay.js'
-import HomePage from './HomePage.js'
-
-import SearchIconAnimation from './searchAnimation.js'
-
+import TabsDisplay from './TabsDisplay.js';
+import HomePage from './HomePage.js';
+import SearchIconAnimation from './searchAnimation.js';
 import {
     Switch,
     Route,
-
 } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -70,7 +66,7 @@ export default function MainComponent() {
                         <Route path='/TVShows'>
                             <TabsDisplay />
                         </Route>
-                        <Route path="/dataCharts">
+                        <Route path="/DataCharts">
                             <TabsDisplay />
                         </Route>
                         <Route exact path="/">
@@ -94,7 +90,7 @@ export default function MainComponent() {
                         <Route path='/TVShows'>
                             <TVShows />
                         </Route>
-                        <Route path="/dataCharts">
+                        <Route path="/DataCharts">
                             <DataChartPage />
                         </Route>
                         <Route exact path="/">
@@ -113,7 +109,7 @@ function NavigationHost(props) {
     if (props.pageName === "home") {
         return <HomePage />
     }
-    else if (props.pageName === "dataCharts") {
+    else if (props.pageName === "DataCharts") {
         return <DataChartPage />
     }
     else if (props.pageName === "Movies") {
