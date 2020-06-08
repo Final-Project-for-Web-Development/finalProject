@@ -132,7 +132,8 @@ class HomePage extends React.Component {
 
         return (
             <div class="container">
-                <Typography variant="h2" style={{ color: "black" }}>
+
+                <Typography variant="h1" style={{ color: "black" }}>
                     Popular Movies
                 </Typography>
                 <Grid container wrap="wrap">
@@ -177,7 +178,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </Grid>
-                <Typography variant="h2" style={{ color: "black" }}>
+                <Typography variant="h1" style={{ color: "black" }}>
                     Popular TV Shows
                 </Typography>
                 <Grid container wrap="wrap">

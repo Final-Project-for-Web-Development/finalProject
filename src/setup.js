@@ -8,7 +8,7 @@ import TabsDisplay from './TabsDisplay.js';
 import HomePage from './HomePage.js';
 import SearchIconAnimation from './searchAnimation.js';
 
-import {TvChart, MovieChart} from './popularCharts.js';
+import { TvChart, MovieChart } from './popularCharts.js';
 
 
 
@@ -79,7 +79,7 @@ export default function MainComponent() {
                         </Route>
                     </Switch>
                     <section className={classes.rightToolbar}>
-                        <SearchIconAnimation />
+                        <SearchIconAnimation alt="searchIcon" />
                     </section>
 
                 </Toolbar>
