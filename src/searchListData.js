@@ -20,20 +20,20 @@ class MovieData extends React.Component {
         this.fetchingMovie();
         let movie = this.fetchingMovie();
     }
-    fetchingTvShow = (show) => {
-        getTVShowsBySearch(show)
-            .then((showData) => {
+    fetchingMovie = (movie) => {
+        getMovieBySearch(movie)
+            .then((movieData) => {
                 this.setState({
-                    name : showData.results[0].name,
-                    popularity: showData.results[0].popularity,
-                    country: showData.results[0].origin_country,
-                    firstAired: showData.results[0].first_air_date,
-                    language: showData.results[0].original_language,
-                    rating: showData.results[0].vote_average,
-                    overview: showData.results[0].overview,
-                    adult: showData.results[0].adult
+                    name : movieData.results[0].name,
+                    popularity: movieData.results[0].popularity,
+                    country: movieData.results[0].origin_country,
+                    firstAired: movieData.results[0].first_air_date,
+                    language: movieData.results[0].original_language,
+                    rating: movieData.results[0].vote_average,
+                    overview: movieData.results[0].overview,
+                    adult: movieData.results[0].adult
                 });
-                return showData;
+                return movieData;
             })
             .catch(err => {
 
