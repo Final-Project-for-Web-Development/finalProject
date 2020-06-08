@@ -100,8 +100,6 @@ export default function MainComponent() {
                         </Route>
                         <Route exact path="/">
                             <HomePage />
-                            <MovieChart/>
-                            <TvChart/>
                         </Route>
                     </Switch>
                 </Typography>
@@ -117,8 +115,6 @@ function NavigationHost(props) {
         return(
             <div>
              <HomePage />
-             <MovieChart/>
-             <TvChart/>
              </div>
         )
 
