@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import TabsDisplay from './TabsDisplay.js';
 import HomePage from './HomePage.js';
 import SearchIconAnimation from './searchAnimation.js';
-import { TvChart, MovieChart } from './popularCharts.js';
 
+import {TvChart, MovieChart} from './popularCharts.js';
 
 
 
@@ -99,6 +99,7 @@ export default function MainComponent() {
                         <Route path="/DataCharts">
                             <MovieChart />
                             <TvChart />
+
                         </Route>
                         <Route exact path="/">
                             <HomePage />
@@ -118,6 +119,7 @@ function NavigationHost(props) {
             <div>
                 <HomePage />
             </div>
+
         )
 
     }
@@ -127,6 +129,7 @@ function NavigationHost(props) {
                 <MovieChart />
                 <TvChart />
             </div>
+
         )
     }
     else if (props.pageName === "Movies") {

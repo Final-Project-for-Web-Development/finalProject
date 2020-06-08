@@ -223,7 +223,9 @@ class HomePage extends React.Component {
                 </Grid>
             </div>
 
-        );
+
+	 );
+
     }
 }
 

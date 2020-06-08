@@ -2,10 +2,13 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import {getMovieBySearch, getTVShowsBySearch } from './DataFetch.js';
 
+import SearchIconAnimation from './searchAnimation.js';
+
 //to be combined with searchListData entries in movie search section
 
 class compareMovieRatings extends React.Component {
-    constructor(){
+
+    constructor(props){
         super(props);
         this.movieOne ={
             Populairty: null,
@@ -97,7 +100,8 @@ class compareMovieRatings extends React.Component {
 }
 //to be combined with searchListData entries in tv show search section
 class compareTVShowRatings extends React.Component {
-    constructor(){
+
+    constructor(props){
         super(props);
         this.showOne ={
             Populairty: null,
