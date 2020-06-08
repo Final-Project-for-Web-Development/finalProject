@@ -7,6 +7,13 @@ import Typography from '@material-ui/core/Typography';
 import TabsDisplay from './TabsDisplay.js';
 import HomePage from './HomePage.js';
 import SearchIconAnimation from './searchAnimation.js';
+import {TvChart, MovieChart} from './popularCharts.js';
+import TabsDisplay from './TabsDisplay.js'
+import HomePage from './HomePage.js'
+
+import SearchIconAnimation from './searchAnimation.js'
+
+
 import {
     Switch,
     Route,
@@ -92,6 +99,9 @@ export default function MainComponent() {
                         </Route>
                         <Route path="/DataCharts">
                             <DataChartPage />
+                        <Route path="/dataCharts">
+                            <MovieChart />
+                            <TvChart/>
                         </Route>
                         <Route exact path="/">
                             <HomePage />
@@ -107,10 +117,25 @@ export default function MainComponent() {
 // prop pageName ["home", "dataCharts"]
 function NavigationHost(props) {
     if (props.pageName === "home") {
-        return <HomePage />
+        return(
+            <div>
+             <HomePage />
+             </div>
+        )
+
     }
+<<<<<<< HEAD
     else if (props.pageName === "DataCharts") {
         return <DataChartPage />
+=======
+    else if (props.pageName === "dataCharts") {
+        return (
+            <div>
+        <MovieChart/>
+        <TvChart/>
+        </div>
+        )
+>>>>>>> 343ae8db035d1587d72f19912ee9f1b92a3fe838
     }
     else if (props.pageName === "Movies") {
         return <MoviePage />
@@ -135,12 +160,12 @@ function TVShows() {
 }
 
 
-function DataChartPage() {
-    return (
-        <div>Welcome! Here is where the data visualizations will be!</div>
-    );
+// function DataChartPage() {
+//     return (
+//         <div>Welcome! Here is where the data visualizations will be!</div>
+//     );
 
-}
+// }
 
 
 
